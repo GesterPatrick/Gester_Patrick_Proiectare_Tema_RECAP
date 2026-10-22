@@ -2,7 +2,7 @@
 <html lang="ro">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=devide-width",initial-scale="1">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
     <link rel="stylesheet" href="style.css">
     <title>Formular cu API</title>
     <script src="app.js" defer></script>
@@ -15,21 +15,27 @@
     <main>
         <h1> Librarie Muzicala</h1>
         <article>
+            <h2>Discutii comunitate Pian</h2>
+            <div id="status"></div>
+            <ul id="ul"></ul>
+        </article>
+
+        <article>
             <h2> Cauta in libraria noastra</h2>
             <p> Completeaza formularul de mai jos</p>
 
-            <form action="https://jsonplaceholder.typicode.com/posts" method="get">
+            <form action="https://jsonplaceholder.typicode.com/posts" >
                 <label for="titlu">Titlu</label>
                 <input type="text" id="titlu" name="titlu"  placeholder="Cauta" minlength="4" required >
                 <label for="descriere">Descriere</label>
-                <textarea id="descriere" name="descriere" ></textarea>
+                <textarea id="descriere" name="descriere" minlength="10"></textarea>
                 
                 <button type="submit">Trimite</button>
             </form>
-            
+
         </article>
     </main>
-    <footer></footer>
+    <footer><small>Gester Patrick Arnold 2026</small></footer>
   </body>
 
 </html>
