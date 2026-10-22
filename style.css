@@ -6,7 +6,11 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-
+@media (max-width: 600px) {
+  main {
+    padding: 8px;
+  }
+}
 
 header,
 main,
@@ -15,7 +19,23 @@ footer {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
     background-color:rgb(165, 187, 230);
+
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 8px;
+  }
+}
+
+h2 {
+    text-align: center;
 }
 
 h1,h2,h3,h4 {
@@ -24,6 +44,7 @@ h1,h2,h3,h4 {
 
 h1 {
     color:rgba(8, 6, 41, 0.859);
+    text-decoration: underline;
 }
 h2 {
     color:#00495dc5
@@ -36,13 +57,20 @@ li  {
     margin-bottom: 45px;
 }
 
+label {
+    display:block;
+}
+
 input,
 textarea {
-  padding: 8px;
+  display:block;
+  padding:8px 35px;
   border: 1px solid #d4a45b;
   border-radius: 4px;
   background-color:rgba(223, 224, 227, 0.57)
 }
+
+
 
 button {
   margin-top: 12px;
