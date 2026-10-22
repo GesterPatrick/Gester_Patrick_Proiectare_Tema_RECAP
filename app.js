@@ -91,3 +91,32 @@ form.addEventListener("submit", async (e) => {
         status_post.textContent = 'Eroare ' + error.message;
     }
 })
+
+
+// CERINTA 4, Cautare prin FILTRARE
+
+const main = document.querySelector("main");
+const search = document.getElementById("search");
+const ul = document.querySelector('ul');
+
+main.addEventListener("input", function(event) {
+    // verificam sa fie declansat evenimentul de search box
+    if (event.target !== search) {
+        return;
+    }
+
+    const textCautat = search.value.toLowerCase();
+
+    // parcurgem lista <ul> sa cautam printre <li>
+    for(const li of ul.children) {
+        let titlu = li.querySelector('h4'); // selectam primul h4 din <li>
+        titlu = titlu.textContent.toLowerCase();
+
+        // dk titlul nu coincide il ascundem
+        if (!titlu.includes(textCautat)) {
+            li.hidden = true;
+        } else {
+            li.hidden = false;
+        }
+    }
+})
