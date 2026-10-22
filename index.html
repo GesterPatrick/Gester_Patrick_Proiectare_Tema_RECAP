@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=devide-width",initial-scale="1">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular cu API</title>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+        <nav> </nav>
+    </header>
+    <main>
+        <h1> Librarie Muzicala</h1>
+        <article>
+            <h2> Cauta in libraria noastra</h2>
+            <p> Completeaza formularul de mai jos</p>
+
+            <form action="https://jsonplaceholder.typicode.com/posts" method="get">
+                <label for="titlu">Titlu</label>
+                <input type="text" id="titlu" name="titlu"  placeholder="Cauta" minlength="4" required >
+                <label for="descriere">Descriere</label>
+                <textarea id="descriere" name="descriere" ></textarea>
+                
+                <button type="submit">Trimite</button>
+            </form>
+            
+        </article>
+    </main>
+    <footer></footer>
+  </body>
+
+</html>
