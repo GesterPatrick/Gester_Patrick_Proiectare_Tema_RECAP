@@ -1,3 +1,5 @@
+
+// CERINTA 2, GET
 incarcaPostari();
 
 async function incarcaPostari() {
@@ -42,6 +44,7 @@ async function incarcaPostari() {
     }
 }
 
+// CERINTA 3, POST
 const form = document.getElementById("form");
 const status_post = document.getElementById("status-post");
 
@@ -112,11 +115,11 @@ main.addEventListener("input", function(event) {
         let titlu = li.querySelector('h4'); // selectam primul h4 din <li>
         titlu = titlu.textContent.toLowerCase();
 
-        // dk titlul nu coincide il ascundem
-        if (!titlu.includes(textCautat)) {
-            li.hidden = true;
-        } else {
+        // dk titlul Coincide lasam, dk nu coincide il ascundem
+        if (titlu.includes(textCautat)) {
             li.hidden = false;
+        } else {
+            li.hidden = true;
         }
     }
 })
