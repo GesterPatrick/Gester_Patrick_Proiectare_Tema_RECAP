@@ -42,3 +42,53 @@ async function incarcaPostari() {
         status.textContent= 'Eroare incarcare discutii' + error.message;
     }
 }
+
+const form = document.getElementById("form");
+const status_post = document.getElementById("status-post");
+
+//previn refreshul paginii la butonul Trimitere
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const formular = new FormData(form);
+    const data = { // datele ce trimit
+        title: formular.get("titlu"),
+        body: formular.get("mesaj")
+    };
+
+    try {
+        const raspuns = await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }); 
+         const body = await raspuns.json();
+
+         // dk raspunsul nu e ok
+        if(raspuns.status >= 400 && raspuns.status <= 499) {
+            status_post.textContent = body.error ?? `HTTP ${raspuns.status}`;
+            return;
+        }
+
+        // raspunsul a reusit, se creeaza postarea si se adauga in Lista
+        if (raspuns.status === 201) {
+            const ul = document.getElementById('ul');
+            const li = document.createElement('li');  
+            const h4 = document.createElement('h4');
+            const p = document.createElement('p'); 
+
+            h4.textContent = data.title;
+            p.textContent = data.body;
+
+            li.append(h4);
+            li.append(p);
+
+            ul.append(li);
+            status_post.textContent = "Discutia a fost adaugata.";
+            form.reset();
+        }
+    }
+    catch(error) {
+        status_post.textContent = 'Eroare ' + error.message;
+    }
+})

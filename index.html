@@ -21,17 +21,17 @@
         </article>
 
         <article>
-            <h2> Cauta in libraria noastra</h2>
-            <p> Completeaza formularul de mai jos</p>
+            <h2> Creeaza o discutie</h2>
 
-            <form action="https://jsonplaceholder.typicode.com/posts" >
+            <form action="https://jsonplaceholder.typicode.com/posts" id="form">
                 <label for="titlu">Titlu</label>
                 <input type="text" id="titlu" name="titlu"  placeholder="Cauta" minlength="4" required >
-                <label for="descriere">Descriere</label>
-                <textarea id="descriere" name="descriere" minlength="10"></textarea>
+                <label for="mesaj">Mesaj</label>
+                <textarea id="mesaj" name="mesaj" minlength="10"></textarea>
                 
                 <button type="submit">Trimite</button>
             </form>
+            <div id="status-post"></div>
 
         </article>
     </main>
