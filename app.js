@@ -1,4 +1,4 @@
-
+incarcaPostari();
 
 async function incarcaPostari() {
     const status = document.getElementById('status');
@@ -11,20 +11,31 @@ async function incarcaPostari() {
         }
         const data = await raspuns.json();
 
+
         // verific daca lista e goala
         if(data.length === 0) {
             status.textContent = 'Lista este goala';
-            throw new Error ('Lista este goala');
+            return;
          }
         // dk raspunsul a reusit si avem elemente, cream li 
          const ul = document.getElementById('ul');
          ul.innerHTML = ' ';
 
          for(const d of data) {
-            const li = document.createElement('li');
-            li.textContent =` ${d.title} ${d.body}`;
-            ul.append(li);
+            const li = document.createElement('li');  // creez elementele HTML
+            const p = document.createElement('p'); 
+            const h4 = document.createElement('h4');
+
+            h4.textContent = `${d.title}`;    //pun titlul intr-un <h4>
+            p.textContent = `${d.body}`;      // body-ul intr-un <p>
+
+            li.append(h4);    // le lipesc sa fie intr-un <li>
+            li.append(p);
+
+            ul.append(li);  // lipesc <li>-ul de lista principala <ul>
          }
+
+         status.textContent =' ';
 
     }
     catch(error) {
