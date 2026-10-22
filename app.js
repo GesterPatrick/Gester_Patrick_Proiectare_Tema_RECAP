@@ -11,7 +11,6 @@ async function incarcaPostari() {
         }
         const data = await raspuns.json();
 
-
         // verific daca lista e goala
         if(data.length === 0) {
             status.textContent = 'Lista este goala';
@@ -64,13 +63,13 @@ form.addEventListener("submit", async (e) => {
         }); 
          const body = await raspuns.json();
 
-         // dk raspunsul nu e ok
+         // dk raspunsul e intre 4xx
         if(raspuns.status >= 400 && raspuns.status <= 499) {
             status_post.textContent = body.error ?? `HTTP ${raspuns.status}`;
             return;
         }
 
-        // raspunsul a reusit, se creeaza postarea si se adauga in Lista
+        // raspunsul a reusit si e Status 201, se creeaza postarea si se adauga in Lista 
         if (raspuns.status === 201) {
             const ul = document.getElementById('ul');
             const li = document.createElement('li');  
