@@ -16,5 +16,5 @@
 - 4xx la GET: afisez mesaj specific si Status Code HTTP
 
 - 201: la POST: adaug discutia noua in lista + mesaj de succes sub formular
-- 4xx: la POST: sub Formular afisez mesajul error trimis de server, daca lipseste Status Code HTTP
+- 4xx: la POST: sub Formular afisez mesajul error trimis de server, daca lipseste atunci Status Code HTTP
 - Alte erori prinse in 'catch': afisez mesaj generic
