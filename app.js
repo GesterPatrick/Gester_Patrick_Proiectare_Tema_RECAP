@@ -35,9 +35,7 @@ async function incarcaPostari() {
 
             ul.append(li);  // lipesc <li>-ul de lista principala <ul>
          }
-
          status.textContent =' ';
-
     }
     catch(error) {
         status.textContent= 'Eroare incarcare discutii' + error.message;
