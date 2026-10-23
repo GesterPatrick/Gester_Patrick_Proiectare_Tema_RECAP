@@ -6,18 +6,12 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-@media (max-width: 600px) {
-  main {
-    padding: 8px;
-  }
-}
 
 header,
 main,
 footer {
   padding: 20px;
 }
-
 
 main {
     display: flex;
